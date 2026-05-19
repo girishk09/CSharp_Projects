@@ -42,31 +42,21 @@ A full-stack web application for managing books, authors, and library members. B
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/library-management-system.git
-   cd library-management-system
+   git clone https://github.com/girishk09/CSharp_Projects.git
+   cd CSharp_Projects
    ```
 
-2. Open the backend project in Visual Studio 2022.
+2. Open the `Library_Backend` project in Visual Studio 2022.
 
-3. Update the connection string in `appsettings.json` with your SQL Server details:
-   ```json
-   "ConnectionStrings": {
-     "DefaultConnection": "Server=YOUR_SERVER;Database=LibraryDB;Trusted_Connection=True;"
-   }
+3. Apply Entity Framework Core migrations to set up the database (first time only). Open the Package Manager Console in Visual Studio and run:
+   ```
+   Add-Migration InitialCreate
+   Update-Database
    ```
 
-4. Apply Entity Framework Core migrations to set up the database:
-   ```bash
-   dotnet ef migrations add InitialCreate
-   dotnet ef database update
-   ```
+4. Run the backend using the Debug button in Visual Studio (or press `F5`).
 
-5. Run the backend:
-   ```bash
-   dotnet run
-   ```
-
-The API will start at `https://localhost:7000` (or the port configured in your launch settings).
+The API will start at the port configured in your launch settings.
 
 ---
 
@@ -74,7 +64,7 @@ The API will start at `https://localhost:7000` (or the port configured in your l
 
 1. Navigate to the frontend folder:
    ```bash
-   cd frontend
+   cd Library_UI
    ```
 
 2. Install dependencies:
@@ -94,17 +84,18 @@ The API will start at `https://localhost:7000` (or the port configured in your l
 ## Project Structure
 
 ```
-library-management-system/
-├── backend/
+CSharp_Projects/
+├── Library_Backend/
 │   ├── Controllers/
 │   ├── Models/
 │   ├── Data/
 │   └── appsettings.json
-└── frontend/
-    ├── src/
-    │   ├── app/
-    │   └── environments/
-    └── package.json
+├── Library_UI/
+│   ├── src/
+│   │   ├── app/
+│   │   └── environments/
+│   └── package.json
+└── Library_UnitTests/
 ```
 
 ---
